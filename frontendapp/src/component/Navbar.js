@@ -1,6 +1,6 @@
 import Logo from "../assests/Logo.png";
 
-function Navbar() 
+function Navbar({setShowLoginpage}) 
 {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -40,7 +40,7 @@ function Navbar()
         </div>
       </div>
       <div>
-       <button>Login</button>
+       <button onClick={()=>setShowLoginpage(true)}>Login</button>
       </div>
       <div>
        <button>Register</button>

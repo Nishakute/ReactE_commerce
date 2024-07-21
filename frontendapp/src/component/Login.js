@@ -1,27 +1,52 @@
-import React,{useState} from 'react'
+import React from "react";
+import React,{useState,useEffect} from 'react';
+import Fetchproduct from "./Fetchproduct";
 
-function Login(){
+function Login({setLoggedInData}) {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const [email,setemail]=useState()
-    const [pass,setpass] = useState();
-
-    const handleClick=()=>{
-        const userData=JSON.parse(localStroage.getItem('user'))
-    }
-    return(
+  
+    const handleClick = () =>{
+      const userData = JSON.parse(localStorage.getItem('user'));
+      }
     
-        <form>  
-        <div class="container">   
-            <label>Email : </label>   
-            <input type="text"  value={email}placeholder="Enter email" id="email" name="email" onChange={(e) => setemail(e.target.value)} required/>  
-            <label>Password : </label>   
-            <input type="password" value={pass} placeholder="Enter Password" id="password" name="password" onChange={(e) => setpass(e.target.value)} required/>  
-            <button type="submit" onClick={handleClick}>Login</button>   
-              
-        </div>   
-    </form>    
-    
-
-    )
-}
-export default Login
+  
+    return (
+      <>
+        <div className="containerDiv">
+        <div className="login-container">
+          <h2>Login</h2>
+          <form >
+            <div className="input-group">
+              <label htmlfor="email">Email</label>
+              <input 
+                type="text" 
+                id="email" 
+                name="email" 
+                onChange={(e) => setEmail(e.target.value)}
+                required />
+            </div>
+            <div className="input-group">
+              <label htmlfor="password">Password</label>
+              <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              onChange={(e) => setPassword(e.target.value)}
+              required />
+            </div>
+  
+            <button onClick={handleClick} >Login</button>
+          </form>
+          <p>{message}</p>
+        </div>
+       
+        </div>
+      </>
+    );
+  }
+  
+  
+       
+export default Login;
