@@ -1,6 +1,7 @@
-import React from "react";
-import React,{useState,useEffect} from 'react';
-import Fetchproduct from "./Fetchproduct";
+
+import React,{useState} from 'react';
+import Fetchproduct from './Fetchproduct';
+import './login.css'
 
 function Login({setLoggedInData}) {
     const [email, setEmail] = useState('');
@@ -9,6 +10,8 @@ function Login({setLoggedInData}) {
   
     const handleClick = () =>{
       const userData = JSON.parse(localStorage.getItem('user'));
+      setLoggedInData(true)
+
       }
     
   
@@ -39,7 +42,7 @@ function Login({setLoggedInData}) {
   
             <button onClick={handleClick} >Login</button>
           </form>
-          <p>{message}</p>
+         
         </div>
        
         </div>

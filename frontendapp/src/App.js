@@ -4,26 +4,24 @@ import Navbar from './component/Navbar';
 import Login from './component/Login';
 import Register from './component/Register';
 import Fetchproduct from './component/Fetchproduct';
-import { useState } from 'react';
+import {useState } from 'react';
 
 
 
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [showLoginPage, setShowLoginPage] = useState(false)
 
-  const [loggedIn,setLoggedIn] = useState(false)
-  const [registeredInData,setRegisteredInData] = useState(false)
-  const [showLoginpage,setShowLoginpage] = useState(false)
+  const setLoggedInD =(d)=>{
+    setLoggedIn(d)
 
-  const setLoggedInD=(d)=>{setLoggedIn(d)}
+  }
   return (
     <>
-  <Navbar setShowLoginpage={setShowLoginpage}/>
-    {/* <Header /> */}
-    <br />
+  <Navbar setShowLoginpage={setShowLoginPage}/>
+  {/* {showLoginPage ? <Login setLoggedInData={setLoggedInD}/> : <Register/>} */}
 
-    {showLoginpage ? <Login setLoggedInData={setLoggedInD}/> : <Register setRegisteredInData={setRegisteredInData}/>}
-
-    {loggedIn ? <Fetchproduct /> : <p></p>}
+  {loggedIn ? <Fetchproduct /> : <p></p>}
     
 </>
   );
