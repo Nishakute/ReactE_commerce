@@ -1,4 +1,5 @@
 import Logo from "../assests/Logo.png";
+import {Link} from 'react-router-dom';
 
 function Navbar({setShowLoginpage}) 
 {
@@ -40,10 +41,11 @@ function Navbar({setShowLoginpage})
         </div>
       </div>
       <div>
-       <button onClick={()=>setShowLoginpage(true)}>Login</button>
+       {/* <button onClick={()=>setShowLoginpage(true)}>Login</button> */}
+       <Link to='/login'><button className="btn btn-primary">LOGIN</button></Link>
       </div>
       <div>
-       <button>Register</button>
+      <Link to='/register'><button className="btn btn-primary">Register</button></Link> 
       </div>
     </nav>
   );

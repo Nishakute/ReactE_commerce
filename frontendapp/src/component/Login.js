@@ -1,16 +1,19 @@
 
 import React,{useState} from 'react';
 import Fetchproduct from './Fetchproduct';
-import './login.css'
+import './login.css';
+import {useNavigate} from 'react-router-dom';
 
 function Login({setLoggedInData}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const Navigate = useNavigate();
 
   
     const handleClick = () =>{
       const userData = JSON.parse(localStorage.getItem('user'));
       setLoggedInData(true)
+      Navigate('/fetch-product')
 
       }
     

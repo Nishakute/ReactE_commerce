@@ -5,7 +5,7 @@ import Login from './component/Login';
 import Register from './component/Register';
 import Fetchproduct from './component/Fetchproduct';
 import {useState } from 'react';
-
+import {Routes,Route} from 'react-router-dom';
 
 
 function App() {
@@ -18,12 +18,22 @@ function App() {
   }
   return (
     <>
-  <Navbar setShowLoginpage={setShowLoginPage}/>
+  
+  {/* <Navbar setShowLoginpage={setShowLoginPage}/> */}
   {/* {showLoginPage ? <Login setLoggedInData={setLoggedInD}/> : <Register/>} */}
 
-  {loggedIn ? <Fetchproduct /> : <p></p>}
-    
-</>
+  {/* {loggedIn ? <Fetchproduct /> : <p></p>} */}
+
+  
+
+
+  <Navbar></Navbar>
+    <Routes>
+      <Route path='/register' element={<Register />}></Route>
+      <Route path='/login' element={<Login setLoggedInData={setLoggedInD}/>}></Route>
+      <Route path='/fetch-product' element={<Fetchproduct />}></Route>
+    </Routes>
+    </>
   );
 }
 
