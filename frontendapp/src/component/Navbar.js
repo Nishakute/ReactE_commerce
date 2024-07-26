@@ -1,5 +1,6 @@
 import Logo from "../assests/Logo.png";
 import {Link} from 'react-router-dom';
+import Themetoggle from "./Themetoggle";
 
 function Navbar({setShowLoginpage}) 
 {
@@ -46,6 +47,9 @@ function Navbar({setShowLoginpage})
       </div>
       <div>
       <Link to='/register'><button className="btn btn-primary">Register</button></Link> 
+      </div>
+      <div>
+        <Themetoggle/>
       </div>
     </nav>
   );

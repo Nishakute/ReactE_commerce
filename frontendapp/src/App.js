@@ -14,8 +14,16 @@ function App() {
 
   const setLoggedInD =(d)=>{
     setLoggedIn(d)
-
+  
   }
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch(`https://fakestoreapi.com/products?limit=5`)
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+      });
+  }, []);
   return (
     <>
   

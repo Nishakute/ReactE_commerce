@@ -2,30 +2,27 @@
 
 import React,{useState,useEffect} from "react";
 import './fetch.css';
+import ProductCard from "./ProductCard";
+
 
 function Fetchproduct() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    fetch(`https://fakestoreapi.com/products?limit=5`)
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
-      });
-  }, []);
+ 
   return (
     <>
       <div>Show Products</div>
-      <div className="product-grid ">
+      <div className="row mx-2">
         {data.map((elmt) => (
-          <div className="product-card">
-            <img src={elmt.image} />
-            <h2>{elmt.title}</h2>
-            <p className="price">{elmt.price}</p>
-          </div>
+          <ProductCard key={index} elmt={elmt}/>
+  h
         ))}
       </div>
     </>
   );
 }
+
+
+
+
+
 
 export default Fetchproduct;

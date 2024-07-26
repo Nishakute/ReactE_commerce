@@ -11,8 +11,8 @@ const Themetoggle=()=>{
     return(
         <span className="theme-toggle">
         <button onClick={toggletheme} className="toggle-button">
-          {/* <IoToggle size={34} className="toggle-icon" /> */}
-          {draktheme ? <FaToggleOff  size={25}/> : < aToggleOn size={25} />}
+         
+          {draktheme ? <FaToggleOff  size={25}/> : < FaToggleOn size={25} />}
         </button>
       </span>
 
