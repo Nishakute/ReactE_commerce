@@ -1,0 +1,51 @@
+/* Ensure body has default and dark themes */
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Default light theme */
+  body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Dark theme */
+  body.dark-theme {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  /* Styling for the theme toggle container */
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Styling for the toggle button */
+  .toggle-button {
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* Toggle button hover state */
+  .toggle-button:hover {
+    background-color: #e0e0e0;
+    border-color: #bbb;
+  }
+  
+  /* Toggle button when dark theme is active */
+  .dark-theme .toggle-button {
+    background-color: #333;
+    border-color: #555;
+  }
+  
+  /* Icon size and alignment */
+  .toggle-button svg {
+    vertical-align: middle;
+  }
+  

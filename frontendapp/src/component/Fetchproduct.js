@@ -13,16 +13,11 @@ function Fetchproduct() {
       <div className="row mx-2">
         {data.map((elmt) => (
           <ProductCard key={index} elmt={elmt}/>
-  h
+  
         ))}
       </div>
     </>
   );
 }
-
-
-
-
-
 
 export default Fetchproduct;
