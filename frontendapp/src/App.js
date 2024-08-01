@@ -4,7 +4,7 @@ import Navbar from './component/Navbar';
 import Login from './component/Login';
 import Register from './component/Register';
 import Fetchproduct from './component/Fetchproduct';
-import {useState } from 'react';
+import {useState,useEffect } from 'react';
 import {Routes,Route} from 'react-router-dom';
 
 
@@ -39,7 +39,7 @@ function App() {
     <Routes>
       <Route path='/register' element={<Register />}></Route>
       <Route path='/login' element={<Login setLoggedInData={setLoggedInD}/>}></Route>
-      <Route path='/fetch-product' element={<Fetchproduct />}></Route>
+      <Route path='/fetch-product' element={<Fetchproduct/>}></Route>
     </Routes>
     </>
   );

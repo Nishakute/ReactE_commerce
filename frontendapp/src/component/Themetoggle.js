@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaToggleOff,FaToggleOn } from "react-icons/fa6";
-import './themtoggle.css'
+import './themetoggle.css'
 
 const Themetoggle=()=>{
     const [draktheme,setdarktheme]=useState(false);
