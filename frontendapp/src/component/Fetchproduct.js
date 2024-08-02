@@ -13,7 +13,6 @@ function Fetchproduct({data}) {
       <div className="row mx-2">
         {data.map((elmt,index) => (
           <ProductCard key={index} elmt={elmt}/>
-  
         ))}
       </div>
     </>

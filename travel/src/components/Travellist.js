@@ -1,19 +1,42 @@
-import React from 'react';
+// Custome Hooks
+import React,{useEffect,useState} from 'react';
 
 
-function TravelList(){
+
+
+function TravelList(urlFromUser){
     
+    const[destination,setdestination]=useState();
+    const[loading,setloading]=useState(true);
+    const[error,seterror]=useState(null)
 
 
 
+    const fetchDestination=()=>{
+        try {
+            axios.get(urlFromUser).then((response)=>setdestination(response.data));
+            setloading(false)
+        } catch (error) {
+            seterror(error);
+            
+            setloading(false)
+            
+        }
+    };
 
+    useEffect(()=>{
+        fetchDestination();
+    },[]);
 
-    return(
-        <div className='container'>
-            <h2>Travel App</h2>
-            <div></div>
-        </div>
+    const deletedestination=(id)=>{
+        setdestination(destination.filter((destinations)=>destinations.id!==id));
+    }
 
-    )
+    const refreshDestination=()=>{
+        fetchDestination();
+    }
+
+    return
+    { destination,loading,error,deletedestination,refreshDestination }
 }
 export default TravelList;
