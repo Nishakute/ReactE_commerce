@@ -5,12 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './login.css'
 import {BrowserRouter} from 'react-router-dom'; 
+import {ThemeProvider} from './context/Themecontext'
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+  <ThemeProvider>
     <App />
+    </ThemeProvider>
   </BrowserRouter>
 );
 

@@ -1,11 +1,14 @@
 import Logo from "../assests/Logo.png";
 import {Link} from 'react-router-dom';
-import Themetoggle from "./Themetoggle";
+import { Themecontext } from "../context/Themecontext";
+import { useContext } from "react";
+
 
 function Navbar({setShowLoginpage}) 
 {
+  const {theme, themetoggle} = useContext(Themecontext);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className={`navbar navbar-expand-lg ${theme == 'light' ? 'navbar-dark bg-dark' : 'navbar-light bg-light' }`}>
       <a class="navbar-brand" href="#">
         <img
           src={Logo}
@@ -49,8 +52,9 @@ function Navbar({setShowLoginpage})
       <Link to='/register'><button className="btn btn-primary">Register</button></Link> 
       </div>
       <div>
-        <Themetoggle/>
+      <button onClick={themetoggle}>Change theme</button>
       </div>
+     
     </nav>
   );
 }
