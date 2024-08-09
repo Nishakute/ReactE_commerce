@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import img from './books.jpg'
+
 
 const BookCard = ({ book }) => {
   return (
     <div className="book-card">
-      <h2>{book.title}</h2>
+      <img src={img} alt={`${book.title} cover`} className="book-image" />
+      <h3>{book.title}</h3>
       <p>{book.author}</p>
-      <Link to={`/book/${book.id}`}>More Details</Link>
+      <p>{book.description}</p>
+
+      <button className='btn btn-dark' ><Link to={`/book/${book.id}`}>More Details</Link></button>
     </div>
   );
 };

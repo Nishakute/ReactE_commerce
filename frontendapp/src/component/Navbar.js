@@ -2,13 +2,15 @@ import Logo from "../assests/Logo.png";
 import {Link} from 'react-router-dom';
 import { Themecontext } from "../context/Themecontext";
 import { useContext } from "react";
+//import { Authcontext, AuthProvider } from "../context/Authcontext";
 
 
 function Navbar({setShowLoginpage}) 
 {
   const {theme, themetoggle} = useContext(Themecontext);
+  //const{isAututhenticated,user,logout}=useContext(Authcontext)
   return (
-    <nav className={`navbar navbar-expand-lg ${theme == 'light' ? 'navbar-dark bg-dark' : 'navbar-light bg-light' }`}>
+    <nav className={`navbar navbar-expand-lg ${theme == 'light' ? 'navbar-dark bg-dark' :'navbar-light bg-light'}`}>
       <a class="navbar-brand" href="#">
         <img
           src={Logo}

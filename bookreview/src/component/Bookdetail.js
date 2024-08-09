@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useFetch from '../customhook/Usefetch';
-import ReviewForm from './ReviewForm';
+import ReviewForm from './Reviewform';
+import img from './books.jpg'
+
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -17,9 +19,14 @@ const BookDetails = () => {
 
   return (
     <div className="book-details">
+      <div className='image'>
+       <img src={img} alt={`${book.title} cover`} className="book-image" />
+       </div>
       <h1>{book.title}</h1>
       <p><strong>Author:</strong> {book.author}</p>
       <p><strong>Description:</strong> {book.description}</p>
+      <p><strong>Genre:</strong> {book.genre}</p>
+
       <h2>Reviews</h2>
       {reviews.map((review, index) => (
         <div key={index}>

@@ -7,8 +7,7 @@ const ThemeProvider = ({children}) => {
 
 
     const themetoggle=()=>{
-
-        settheme(prevtheme=>prevtheme==='light' ? 'dark':'light')
+    settheme(prevtheme=>prevtheme==='light' ? 'dark':'light')
     }
 
 

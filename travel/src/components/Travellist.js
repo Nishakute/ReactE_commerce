@@ -1,16 +1,15 @@
 // Custome Hooks
-import React,{useEffect,useState} from 'react';
+import {useEffect,useState} from 'react';
+import axios from 'axios';
 
 
 
 
 function TravelList(urlFromUser){
     
-    const[destination,setdestination]=useState();
+    const[destination,setdestination]=useState([]);
     const[loading,setloading]=useState(true);
     const[error,seterror]=useState(null)
-
-
 
     const fetchDestination=()=>{
         try {
@@ -18,8 +17,7 @@ function TravelList(urlFromUser){
             setloading(false)
         } catch (error) {
             seterror(error);
-            
-            setloading(false)
+           setloading(false)
             
         }
     };
@@ -36,7 +34,7 @@ function TravelList(urlFromUser){
         fetchDestination();
     }
 
-    return
-    { destination,loading,error,deletedestination,refreshDestination }
+    return { destination,loading,error,deletedestination,refreshDestination }
 }
 export default TravelList;
+

@@ -94,6 +94,15 @@ form button {
 form button:hover {
   background-color: #218838;
 }
+.book-image{
+  width: 100px;
+  height:100px;
+  
+}
+.book-card{
+  width:400px;
+ 
+}
 
 
 

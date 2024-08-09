@@ -34,7 +34,7 @@ function App() {
 
   {/* {loggedIn ? <Fetchproduct /> : <p></p>} */}
 
-  <div className={`app ${theme == 'light' ? 'bg-dark text-light' : 'bg-light text-dark'}`}>
+  <div className={`app ${theme == 'light' ? 'bg-dark text-light' :'bg-light text-dark'}`}>
 
 
   <Navbar></Navbar>

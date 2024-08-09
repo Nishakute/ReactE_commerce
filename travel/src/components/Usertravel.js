@@ -1,11 +1,12 @@
 import React from 'react';
-import TravelList from './Travellist'
+import TravelList from './Travellist';
+
 
 
 
 const Usertravel = () => {
 const{ destination,loading,error,deletedestination,refreshDestination}=
-TravelList(`https://api.example.com/products`);
+TravelList(`https://fakestoreapi.com/products?limit=5`);
 
 if(loading) return<p>Loading...</p>
 if(error) return<p>Data Not Found</p>
