@@ -26,6 +26,7 @@ function App() {
         setData(data);
       });
   }, []);
+  
   return (
 
   <>
@@ -41,7 +42,8 @@ function App() {
     <Routes>
       <Route path='/register' element={<Register />}></Route>
       <Route path='/login' element={<Login setLoggedInData={setLoggedInD}/>}></Route>
-      <Route path='/fetch-product' element={<Fetchproduct/>}></Route>
+      <Route path='/fetch-product' element={<Fetchproduct data={data}/>}></Route>
+      <Route path='/fetch-product/:id' element={<productDetail data={data}/>}></Route>
     </Routes>
     </div>
     </>

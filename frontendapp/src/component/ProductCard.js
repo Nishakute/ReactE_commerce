@@ -7,8 +7,8 @@ const ProductCard=({elmt})=>{
              <div className="product-card">
             <img src={elmt.image} />
             <h2>{elmt.title}</h2>
-            <p className="price">{elmt.price}</p>
-            <button className="btn btn-danger">Add To Cart</button>
+            <p className="price">${elmt.price}</p>
+            <button className="btn btn-danger"> Add To Cart</button>
             <Link to={'./fetch-product/${elmt.id'} state={{elmt}}>More Info</Link>
           </div>
         </div>

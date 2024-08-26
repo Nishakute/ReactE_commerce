@@ -18,6 +18,7 @@ const BookDetails = () => {
   };
 
   return (
+    <div className='container'>
     <div className="book-details">
       <div className='image'>
        <img src={img} alt={`${book.title} cover`} className="book-image" />
@@ -30,12 +31,14 @@ const BookDetails = () => {
       <h2>Reviews</h2>
       {reviews.map((review, index) => (
         <div key={index}>
-          <p><strong>Title:</strong> {review.title}</p>
           <p><strong>Review:</strong> {review.text}</p>
           <p><strong>Rating:</strong> {review.rating}</p>
         </div>
       ))}
+     
       <ReviewForm addReview={addReview} />
+ 
+    </div>
     </div>
   );
 };

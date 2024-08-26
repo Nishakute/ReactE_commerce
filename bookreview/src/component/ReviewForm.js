@@ -1,7 +1,7 @@
 import React, { useState, useEffect,useRef } from 'react';
 import './Review.css'
 
-const ReviewForm = ({ addReview }) => {
+const ReviewForm = () => {
   
   const textRef = useRef();
   const ratingRef = useRef();
