@@ -1,0 +1,59 @@
+/* AddMember.css */
+
+/* General form styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form elements */
+    max-width: 400px; /* Maximum width for the form */
+    margin: 20px auto; /* Center the form horizontally */
+    padding: 20px;
+    background-color: #f8f9fa; /* Light background color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  /* Input field styling */
+  .form input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ced4da; /* Light gray border */
+    font-size: 16px;
+    transition: border-color 0.3s ease; /* Smooth transition for focus */
+  }
+  
+  /* Change border color on focus */
+  .form input:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none; /* Remove default outline */
+  }
+  
+  /* Button styling */
+  .form button {
+    padding: 12px;
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+  }
+  
+  /* Change background color on hover */
+  .form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 480px) {
+    .form {
+      padding: 15px;
+      width: 90%; /* Adjust width on smaller screens */
+    }
+  
+    .form input, .form button {
+      font-size: 14px; /* Smaller font size on mobile */
+    }
+  }
+  

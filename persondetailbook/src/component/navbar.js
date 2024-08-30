@@ -1,8 +1,17 @@
 import React from 'react';
 import './navbar.css';
+import { useState } from 'react';
+import AddMember from './AddMember';
 
 
-const Navbar = ({ onSearch, onAddMember, onFilter }) => {
+const Navbar = ({ handleData ,onSearch,onFilter}) => {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+
+  const handleAddMemberClick = () => {
+    setIsFormVisible(!isFormVisible);
+  };
+
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -19,10 +28,15 @@ const Navbar = ({ onSearch, onAddMember, onFilter }) => {
         <button className="filter-icon" onClick={onFilter}>
           <i className="fas fa-filter"></i> 
         </button>
-        <button className="add-member-btn" onClick={onAddMember}>
+        <button className="add-member-btn" onClick={handleAddMemberClick}>
           + Add Member
         </button>
       </div>
+      {isFormVisible && (
+        <div className="add-member-form">
+          <AddMember handleData={handleData} />
+        </div>
+      )}
     </nav>
   );
 };
